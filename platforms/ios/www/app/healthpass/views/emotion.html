@@ -1,0 +1,28 @@
+<div class="emotions-page" ng-class="{happy: data.emotion_type == 'happy',  sad: data.emotion_type == 'sad', pain: data.emotion_type == 'pain'}">
+  <div class="background"></div>
+  <header>
+    <div id="bar" class="bar-emotion">
+      <a href="#/"><i class="fa fa-arrow-circle-left"></i> back</a>
+    </div>
+  </header>
+  <div class="content">
+    <h3 class="uppercase"><div ng-show="data.emotion_type == 'happy'">You are happy!</div></h3>
+    <h3 class="uppercase"><div ng-show="data.emotion_type == 'sad'">You are sad!</div></h3>
+    <h3 class="uppercase"><div ng-show="data.emotion_type == 'pain'">You feel pain!</div></h3>
+    
+    <div class="icon">
+      <i class="fa fa-smile-o fa-5x" ng-show="data.emotion_type == 'happy'"></i>
+      <i class="fa fa-frown-o fa-5x" ng-show="data.emotion_type == 'sad'"></i>
+      <i class="fa fa-meh-o fa-5x" ng-show="data.emotion_type == 'pain'"></i>
+    </div>
+    
+    <textarea class="desctiptionCls" ng-model="data.description" placeholder="Write to us why"></textarea>
+    <span camera ng-model='myPicture' class="camera">
+        <i class="fa fa-camera fa-2x"></i>
+        <img ng-show="myPicture" ng-src="{{myPicture}}" width="80%">
+      </span>
+    <div class="choice">
+      <button ng-click="saveEmotion(data, localurl)" class="btn">Save</button>
+    </div>
+  </div>
+</div>

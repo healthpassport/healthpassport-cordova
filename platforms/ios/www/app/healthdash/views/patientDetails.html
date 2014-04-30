@@ -1,0 +1,169 @@
+<div class="patient-page">
+
+  <div class="bs-example">
+    <ul class="nav nav-tabs" id="tabs">
+      <li ng-class="{active:selected==1}"><a ng-click="showData(1)"><span class="glyphicon glyphicon-book"></span>  HealthPassport</a></li>
+      <li ng-class="{active:selected==2}"><a ng-click="showData(2)"><span class="glyphicon glyphicon-thumbs-up"></span> Likes/Dislikes <span class="glyphicon glyphicon-thumbs-down"></span></a></li>
+      <li ng-class="{active:selected==3}"><a ng-click="showData(3)"><span class="glyphicon glyphicon-heart-empty"></span> Emotions</a></li>
+      <li ng-class="{active:selected==4}"><a ng-click="showData(4)"><span class="glyphicon glyphicon-map-marker"></span> Map</a></li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+
+    <div id="healthpass" ng-show="selected==1" ng-controller="PassportController">
+
+      <div class="passport-page">
+
+        <div class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-3 hp-key">
+              <i class="fa fa-angle-right fa-2x"></i> <span class="title">Name</span>
+            </div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{user.name}} {{user.surname}}</div>
+            </div>
+          </div>
+				  
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-envelope-o fa-2x"></i> <span class="title">Email</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{user.email || "Not stated yet"}}</div>
+            </div>
+          </div>
+				  
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-phone fa-2x"></i> <span class="title">Telephone</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{user.telephone || "Not stated yet"}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-wheelchair fa-2x"></i> <span class="disability_level">Disability Level</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{disability_level(user.patient.disability_level) || "Not stated yet" }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-book fa-2x"></i> <span class="understanding">Understanding</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{understanding_level(user.patient.understanding_level) || "Not stated yet" }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-bullhorn fa-2x"></i> <span class="communication">Communication</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{communication_type(user.patient.communication_type) || "Not stated yet" }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-3 hp-key"><i class="fa fa-user-md fa-2x"></i> <span class="title">Support hours</span></div>
+            <div class="col-sm-9 hp-value">
+              <div class="inside">{{user.patient.support_hours || "I didn't define the number of"}} hours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="likes_dislikes" ng-show="selected==2">
+      <div id="likes">
+        <h4>Likes</h4>
+        <div class="container">
+          <div class="row">
+            <div ng-repeat="question in user.questions|filter:{answer:2}">
+              <div class="col-xs-2 thumb">
+                <a class="thumbnail">
+                  <img class="img-responsive" ng-src="{{question.picture.url}}"> {{question.title}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dislikes">
+        <h4>Dislikes</h4>
+        <div class="container">
+          <div class="row">
+            <div ng-repeat="question in user.questions|filter:{answer:1}">
+              <div class="col-xs-2 thumb">
+                <a class="thumbnail">
+                  <img class="img-responsive" ng-src="{{question.picture.url}}"> {{question.title}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="possible_choices">
+        <h4>Possible choises</h4>
+        <div class="container">
+          <div class="row">
+            <div ng-repeat="question in user.questions">
+              <div class="col-xs-2 thumb">
+                <a class="thumbnail">
+                  <img class="img-responsive" ng-src="{{question.picture.url}}"> {{question.title}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="add_remove">
+        <i class="fa fa-plus"></i>
+      </div>
+
+    </div>
+
+    <div id="emotions" ng-show="selected==3">
+
+      <h2>Emotion records</h2>
+      <table id="emotion_table" class="table table-hover" ng-show="user.emotions.length > 0">
+        <thead>
+          <tr>
+            <th>Emotion</th>
+            <th>Time</th>
+            <th>Notes</th>
+            <th>Picture</th>
+            <th>Lat</th>
+            <th>Lon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="emotion in user.emotions" class="{{emotion.emotion_type}}">
+            <td>{{emotion.emotion_type}}</td>
+            <td>{{emotion.creation_time}}</td>
+            <td>{{emotion.description}}</td>
+            <td><img ng-show="emotion.url" ng-src="{{emotion.url}}" width="60px"/></td>
+            <td>{{emotion.lon}}</td>
+            <td>{{emotion.lat}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="alert alert-warning"
+        ng-hide="user.emotions.length > 0">
+        <h2>No record on emotions</h2>
+      </div>
+
+    </div>
+
+    <div id="map" ng-show="selected==4">
+
+      <h2>Where the patient is or has been</h2>
+      <google-map center="{longitude:0, latitude:0}" zoom="1">
+        
+        <!-- other directives here -->
+        
+    </google-map>    
+
+    </div>
+
+
+  </div>
+</div>

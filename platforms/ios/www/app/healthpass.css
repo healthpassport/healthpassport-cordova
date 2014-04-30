@@ -1,0 +1,610 @@
+/*
+ * healthpass.less
+ *
+ * Main LESS file to compile (and minimize) into healthpass.css 
+ */
+/* Variables */
+/* Functions */
+/* Less code */
+.avatar {
+  border-radius: 999px;
+  width: 80px;
+}
+#bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 2em;
+  padding: 20px 10px 10px;
+}
+#bar a {
+  color: #fff;
+}
+.form-group {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.form-group .hp-key {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  font-weight: 600;
+}
+.form-group .hp-key .fa {
+  margin-left: 15px;
+}
+.form-group .hp-key .fa,
+.form-group .hp-key .title {
+  vertical-align: middle;
+}
+.form-group .hp-value {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 1.7em;
+}
+.form-group .hp-value .inside {
+  padding: 0px 15px;
+}
+.form-group .hp-value input {
+  padding: 10px;
+}
+.passport-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.passport-page .background {
+  background-color: #3e9994;
+  background-image: -webkit-linear-gradient(top, #3e9994, #21504e);
+  background-image: -moz-linear-gradient(top, #3e9994, #21504e);
+  background-image: -o-linear-gradient(top, #3e9994, #21504e);
+  background-image: -ms-linear-gradient(top, #3e9994, #21504e);
+  background-image: linear-gradient(top, #3e9994, #21504e);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.passport-page #bar {
+  background-color: #3e9994;
+  box-shadow: 0px 0px 20px #122c2b;
+}
+.passport-page .hp-key {
+  background-color: #3e9994;
+}
+.passport-page .hp-value {
+  background-color: #dddddd;
+  color: #2f7571;
+}
+.passport-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.passport-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.passport-page .btn.one_notselected {
+  background-color: #666;
+}
+.passport-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.passport-page .background {
+  background-color: #3e9994;
+  background-image: -webkit-linear-gradient(top, #3e9994, #21504e);
+  background-image: -moz-linear-gradient(top, #3e9994, #21504e);
+  background-image: -o-linear-gradient(top, #3e9994, #21504e);
+  background-image: -ms-linear-gradient(top, #3e9994, #21504e);
+  background-image: linear-gradient(top, #3e9994, #21504e);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.passport-page #bar {
+  background-color: #3e9994;
+  box-shadow: 0px 0px 20px #122c2b;
+}
+.passport-page .hp-key {
+  background-color: #3e9994;
+}
+.passport-page .hp-value {
+  background-color: #d9e8e8;
+  color: #2f7571;
+}
+.passport-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.passport-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.passport-page .btn.one_notselected {
+  background-color: #666;
+}
+.passport-page .hp-value .btn {
+  font-size: 1em;
+}
+.events-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.events-page .background {
+  background-color: #331336;
+  background-image: -webkit-linear-gradient(top, #331336, #000000);
+  background-image: -moz-linear-gradient(top, #331336, #000000);
+  background-image: -o-linear-gradient(top, #331336, #000000);
+  background-image: -ms-linear-gradient(top, #331336, #000000);
+  background-image: linear-gradient(top, #331336, #000000);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.events-page #bar {
+  background-color: #331336;
+  box-shadow: 0px 0px 20px #000000;
+}
+.events-page .hp-key {
+  background-color: #331336;
+}
+.events-page .hp-value {
+  background-color: #c6bdc9;
+  color: #0f0610;
+}
+.events-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.events-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.events-page .btn.one_notselected {
+  background-color: #666;
+}
+.events-page .content {
+  text-align: center;
+  margin-top: 1%;
+}
+.doctor-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.doctor-page .background {
+  background-color: #565051;
+  background-image: -webkit-linear-gradient(top, #565051, #211f1f);
+  background-image: -moz-linear-gradient(top, #565051, #211f1f);
+  background-image: -o-linear-gradient(top, #565051, #211f1f);
+  background-image: -ms-linear-gradient(top, #565051, #211f1f);
+  background-image: linear-gradient(top, #565051, #211f1f);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.doctor-page #bar {
+  background-color: #565051;
+  box-shadow: 0px 0px 20px #070606;
+}
+.doctor-page .hp-key {
+  background-color: #565051;
+}
+.doctor-page .hp-value {
+  background-color: #d1d0ce;
+  color: #3c3738;
+}
+.doctor-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.doctor-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.doctor-page .btn.one_notselected {
+  background-color: #666;
+}
+.add-contact-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.add-contact-page .background {
+  background-color: #dc663d;
+  background-image: -webkit-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -moz-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -o-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -ms-linear-gradient(top, #dc663d, #983b1b);
+  background-image: linear-gradient(top, #dc663d, #983b1b);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.add-contact-page #bar {
+  background-color: #dc663d;
+  box-shadow: 0px 0px 20px #6c2a14;
+}
+.add-contact-page .hp-key {
+  background-color: #dc663d;
+}
+.add-contact-page .hp-value {
+  background-color: #f9e0ce;
+  color: #c34c23;
+}
+.add-contact-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.add-contact-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.add-contact-page .btn.one_notselected {
+  background-color: #666;
+}
+.emotions-page .uppercase {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+.emotions-page h3 {
+  color: #fff;
+}
+.emotions-page .icon {
+  color: #fff;
+  font-size: 1.7em;
+}
+.emotions-page .content {
+  text-align: center;
+}
+.emotions-page textarea {
+  width: 90%;
+  height: 10%;
+  max-height: 400px;
+  min-height: 80px;
+  font-size: 2em;
+}
+.emotions-page #cameraDiv {
+  height: 10%;
+  margin: 2%;
+}
+.emotions-page #cameraDiv .fa {
+  color: white;
+}
+.emotions-page.sad {
+  padding-top: 70px;
+  height: 100%;
+}
+.emotions-page.sad .background {
+  background-color: #a00000;
+  background-image: -webkit-linear-gradient(top, #a00000, #3a0000);
+  background-image: -moz-linear-gradient(top, #a00000, #3a0000);
+  background-image: -o-linear-gradient(top, #a00000, #3a0000);
+  background-image: -ms-linear-gradient(top, #a00000, #3a0000);
+  background-image: linear-gradient(top, #a00000, #3a0000);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.emotions-page.sad #bar {
+  background-color: #a00000;
+}
+.emotions-page.sad .hp-key {
+  background-color: #a00000;
+}
+.emotions-page.sad .btn {
+  background-color: #fff;
+  font-size: 1.7em;
+  width: 200px;
+  color: #a00000;
+}
+.emotions-page.sad textarea {
+  padding: 10px;
+}
+.emotions-page.pain {
+  padding-top: 70px;
+  height: 100%;
+}
+.emotions-page.pain .background {
+  background-color: #003399;
+  background-image: -webkit-linear-gradient(top, #003399, #001133);
+  background-image: -moz-linear-gradient(top, #003399, #001133);
+  background-image: -o-linear-gradient(top, #003399, #001133);
+  background-image: -ms-linear-gradient(top, #003399, #001133);
+  background-image: linear-gradient(top, #003399, #001133);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.emotions-page.pain #bar {
+  background-color: #003399;
+}
+.emotions-page.pain .hp-key {
+  background-color: #003399;
+}
+.emotions-page.pain .btn {
+  background-color: #fff;
+  font-size: 1.7em;
+  width: 200px;
+  color: #003399;
+}
+.emotions-page.pain textarea {
+  padding: 10px;
+}
+.emotions-page.happy {
+  padding-top: 70px;
+  height: 100%;
+}
+.emotions-page.happy .background {
+  background-color: #33cc66;
+  background-image: -webkit-linear-gradient(top, #33cc66, #1f7a3d);
+  background-image: -moz-linear-gradient(top, #33cc66, #1f7a3d);
+  background-image: -o-linear-gradient(top, #33cc66, #1f7a3d);
+  background-image: -ms-linear-gradient(top, #33cc66, #1f7a3d);
+  background-image: linear-gradient(top, #33cc66, #1f7a3d);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.emotions-page.happy #bar {
+  background-color: #33cc66;
+}
+.emotions-page.happy .hp-key {
+  background-color: #33cc66;
+}
+.emotions-page.happy .btn {
+  background-color: #fff;
+  font-size: 1.7em;
+  width: 200px;
+  color: #33cc66;
+}
+.emotions-page.happy textarea {
+  padding: 10px;
+}
+.questions-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.questions-page .background {
+  background-color: #e9b937;
+  background-image: -webkit-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -moz-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -o-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -ms-linear-gradient(top, #e9b937, #a87f12);
+  background-image: linear-gradient(top, #e9b937, #a87f12);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.questions-page #bar {
+  background-color: #e9b937;
+  box-shadow: 0px 0px 20px #7a5c0d;
+}
+.questions-page .hp-key {
+  background-color: #e9b937;
+}
+.questions-page .hp-value {
+  background-color: #e9b937;
+  color: #d6a217;
+}
+.questions-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.questions-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.questions-page .btn.one_notselected {
+  background-color: #666;
+}
+.questions-page .answer {
+  text-align: center;
+  height: 80px;
+}
+.questions-page .noquestions {
+  margin-top: 60px;
+}
+.allergies-page {
+  padding-top: 70px;
+  height: 100%;
+}
+.allergies-page .background {
+  background-color: #e9b937;
+  background-image: -webkit-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -moz-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -o-linear-gradient(top, #e9b937, #a87f12);
+  background-image: -ms-linear-gradient(top, #e9b937, #a87f12);
+  background-image: linear-gradient(top, #e9b937, #a87f12);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.allergies-page #bar {
+  background-color: #e9b937;
+  box-shadow: 0px 0px 20px #7a5c0d;
+}
+.allergies-page .hp-key {
+  background-color: #e9b937;
+}
+.allergies-page .hp-value {
+  background-color: #faf2d9;
+  color: #d6a217;
+}
+.allergies-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.allergies-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.allergies-page .btn.one_notselected {
+  background-color: #666;
+}
+.allergies-page .my_allergies .btn {
+  background-color: #e9b937;
+}
+.contacts-page {
+  padding-top: 70px;
+  height: 100%;
+  color: #fff;
+}
+.contacts-page .background {
+  background-color: #dc663d;
+  background-image: -webkit-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -moz-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -o-linear-gradient(top, #dc663d, #983b1b);
+  background-image: -ms-linear-gradient(top, #dc663d, #983b1b);
+  background-image: linear-gradient(top, #dc663d, #983b1b);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.contacts-page #bar {
+  background-color: #dc663d;
+  box-shadow: 0px 0px 20px #6c2a14;
+}
+.contacts-page .hp-key {
+  background-color: #dc663d;
+}
+.contacts-page .hp-value {
+  background-color: #f9e0ce;
+  color: #c34c23;
+}
+.contacts-page .btn {
+  font-size: 2em;
+  color: #FFF;
+  border: 4px solid;
+}
+.contacts-page .btn.one_allergy {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.contacts-page .btn.one_notselected {
+  background-color: #666;
+}
+.contacts-page .actions,
+.contacts-page .contacts {
+  text-align: center;
+  margin-top: 1%;
+}
+.contacts-page .contacts {
+  margin-top: 20px;
+}
+.contacts-page .contact {
+  border-top: 1px solid #f9e0ce;
+  padding-bottom: 20px;
+}
+.contacts-page .contact .telephone a {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+}
+.contacts-page .contact .call {
+  margin-top: 15px;
+}
+.contacts-page .contact .call a {
+  font-size: 2em;
+  color: green;
+}
+.HomeContainer {
+  text-align: center;
+}
+.HomeContainer .buttons {
+  margin-bottom: 10px;
+}
+.eventbuttons,
+.emotions,
+.clock,
+.passport,
+.camera {
+  height: 15%;
+  vertical-align: middle;
+  width: 100%;
+  font-size: 3em;
+  color: #fff;
+  padding: 10px 0;
+}
+.eventbuttons a,
+.emotions a,
+.clock a,
+.passport a,
+.camera a {
+  color: #fff;
+}
+.eventbuttons .fa,
+.emotions .fa,
+.clock .fa,
+.passport .fa,
+.camera .fa {
+  margin-left: 15px;
+  vertical-align: middle;
+}
+.camera {
+  display: none;
+  height: 20%;
+}
+.camera > .fa {
+  color: #331336;
+}
+.camera a {
+  color: #331336;
+}
+.clock {
+  background-color: #a47272;
+}
+.eventbuttons {
+  background-color: #331336;
+}
+.passport {
+  background-color: #3e9994;
+}
+.happy > .fa {
+  color: #33cc66;
+}
+.sad > .fa {
+  color: #a00000;
+}
+.pain > .fa {
+  color: #003399;
+}
+.menu {
+  overflow: hidden;
+  margin: 1%;
+}
+.menu .btn {
+  margin: 1%;
+  padding: 10px 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btn-transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+#emotion_table .happy {
+  background-color: #adebc2;
+}
+#emotion_table .sad {
+  background-color: #ffd3d3;
+}
+#emotion_table .pain {
+  background-color: #ccddff;
+}

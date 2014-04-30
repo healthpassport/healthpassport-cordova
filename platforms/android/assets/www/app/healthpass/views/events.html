@@ -1,0 +1,27 @@
+<div class="events-page">
+  <div class="background"></div>  
+  <header>
+    <div id="bar">
+      <a href="#/"><i class="fa fa-arrow-circle-left"></i> back</a>
+    </div>
+  </header>
+
+  <div class="content">
+    <a href="#/add_event" class="btn"><i class="fa fa-plus fa-2x"></i><p>Add event</p></a>
+    <div class="events">
+      <div ng-show="me.events.length == 0">No events</div>
+
+      <ul ng-show="me.events.length > 0">
+        <div ng-repeat="event in me.events">
+          <h3>{{event.title}}
+            <i class="fa fa-stethoscope fa-1x" ng-show="event.kind=='Appointment'"></i>
+            <i class="fa fa-calendar fa-1x" ng-show="event.kind=='Birthday'"></i>
+            <i class="fa fa-plus-square fa-1x" ng-show="event.kind=='Medicine Reminder'"></i>
+          </h3>
+          <em>{{event.description}}</em>
+          <hr>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

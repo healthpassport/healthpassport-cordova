@@ -1,0 +1,409 @@
+/*
+ * healthpass.less
+ *
+ * Main LESS file to compile (and minimize) into healthpass.css 
+ */
+
+/* Variables */
+
+// App colors
+@passportColor: #3E9994;
+@passportColorLight: #D9E8E8;
+@eventColor: #331336;
+@eventColorLight: #C6BDC9;
+@passportColorLight: #D9E8E8;
+@contactColor: #DC663D;
+@contactColorLight: #F9E0CE;
+@allergyColor: #E9B937;
+@allergyColorLight: #FAF2D9;
+@questionsColor: #E9B937;
+@questionsColorLight: #E9B937;
+@happyColor: #33CC66;
+@sadColor: #A00000; 
+@painColor: #003399;
+@doctorColor: #565051;
+@doctorColorLight: #D1D0CE;
+@clockColor: #a47272;
+@homeColor: #ecf0f1;
+@homeColorLight: #ddd;
+
+.passport-color {
+  background-color: @passportColor;
+}
+.event-color {
+  background-color: @eventColor;
+}
+.contact-color {
+  background-color: @contactColor;
+}
+.allergy-color {
+  background-color: @allergyColor;
+}
+.questions-color {
+  background-color: @questionsColor;
+}
+
+
+/* Functions */
+
+// Setting icon color
+.setFaColor(@color){
+  & > .fa {
+    color: @color;
+  }
+}
+
+// Every page has its own colors,
+// this is a scheme that we reuse for all the pages
+.make-page(@strong, @light) {
+  .background {
+    .gradient(top, @strong, darken(@strong, 20%)); 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+  padding-top: 70px;
+  height: 100%;
+  #bar {
+    background-color: @strong;
+    box-shadow: 0px 0px 20px darken(@strong, 30%);
+  }
+  .hp-key {
+    background-color: @strong;
+  }
+  .hp-value {
+    background-color: @light;
+    color: darken(@strong, 10%);
+  }
+  .btn {
+    font-size: 2em;
+    color: #FFF;
+    border: 4px solid;
+  }
+  .btn.one_allergy {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .btn.one_notselected {
+    background-color: #666;
+  }
+
+}
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
+
+// Make emotion pages
+.make-emotion(@color) {
+  padding-top: 70px;
+  height: 100%;
+  .background {
+    .gradient(top, @color, darken(@color, 20%)); 
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+  #bar {
+    background-color: @color;
+  }
+  .hp-key {
+    background-color: @color;
+  }
+
+  .btn { 
+    background-color: #fff;
+    font-size: 1.7em;
+    width: 200px;
+    color: @color;
+  }
+  textarea {
+    padding: 10px;
+  }
+}
+
+/* Less code */
+
+.avatar {
+  border-radius: 999px;
+  width: 80px;
+}
+
+#bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 2em;
+  padding: 20px 10px 10px;
+  a {
+    color: #fff;
+  }
+}
+
+.form-group {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  .hp-key {
+    padding-top: 10px;
+    padding-bottom:10px;
+    font-size: 1.7em;
+    color: #fff;
+    font-weight: 600;
+    .fa {
+      margin-left: 15px;
+    }
+    .fa, .title {
+      vertical-align: middle;
+    }
+  }
+  .hp-value {
+
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 1.7em;
+    .inside {
+      padding: 0px 15px;
+    }
+    input {
+      padding: 10px;
+    }
+  } 
+}
+
+.home-page {
+  padding-top: 0px !important;
+  .make-page(@homeColor, @homeColorLight);
+  .gradient(top, darken(@homeColor, 20%), @homeColor); 
+  .btn {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 80%;
+    line-height: 1;
+  }
+  .btns .fa {
+    vertical-align: middle;
+    font-size: 1.7em;
+  }
+  .top {
+    padding-bottom: 20px;
+    padding-top: 30px;
+  }
+}
+
+.passport-page {
+  .make-page(@passportColor, @passportColorLight);
+  .hp-value .btn {
+    font-size: 1em;
+  }
+}
+
+.events-page {
+  .make-page(@eventColor, @eventColorLight);
+
+  .content{
+  text-align: center;
+  margin-top:1%;
+  }
+}
+
+.doctor-page {
+  .make-page(@doctorColor, @doctorColorLight);
+}
+
+.add-contact-page{
+  .make-page(@contactColor,@contactColorLight);
+}
+
+.emotions-page {
+  .uppercase {
+    text-transform: uppercase;
+    font-size: 3em;
+  }
+
+  h3 {
+    color: #fff;
+  }
+  .icon {
+    color: #fff;
+    font-size: 1.7em;
+  }
+  .content {
+    text-align: center;
+  }
+  
+  textarea {
+    width: 90%;
+    height: 10%;
+    max-height: 400px;
+    min-height: 70px;
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  #cameraDiv{
+  height: 10%;
+  margin: 2%;
+    .fa{
+      color: white;
+    }
+  }
+
+  &.sad {
+    .make-emotion(@sadColor);
+  }
+
+  &.pain {
+    .make-emotion(@painColor);
+  }
+
+  &.happy {
+    .make-emotion(@happyColor);
+  }
+}
+
+.questions-page {
+  .make-page(@questionsColor, @questionsColorLight);
+  .answer {
+    text-align: center;
+    height: 80px;
+  }
+  .noquestions {
+    margin-top: 60px;
+  }
+}
+
+.allergies-page {
+  .make-page(@allergyColor, @allergyColorLight);
+  .my_allergies .btn {
+    background-color: @allergyColor;
+  }
+}
+
+.contacts-page {
+  .make-page(@contactColor, @contactColorLight);
+  color:#fff;
+  .actions, .contacts {
+    text-align:center;
+    margin-top: 1%;
+
+  }
+  .contacts {
+    margin-top: 20px;
+  }
+  .contact {
+    border-top: 1px solid @contactColorLight;
+    padding-bottom: 20px;
+    .telephone a {
+      color: #fff;
+      font-size:1em;
+      font-weight: 600;
+    }
+    .call {
+      margin-top: 15px;
+      a {
+        font-size: 2em;
+        color: green;
+      }
+    }
+  }
+}
+.HomeContainer {
+  text-align: center;
+  
+  .buttons {
+    margin-bottom: 10px;
+  }
+}
+
+
+.eventbuttons, .emotions, .clock, .passport, .camera {
+  a {
+    color: #fff; 
+  }
+
+  height: 15%;
+  vertical-align: middle;
+  width:100%;
+  font-size: 3em;
+  color: #fff;
+  
+  padding: 10px 0;
+  .fa {
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+}
+
+.camera {
+  .setFaColor(@eventColor);
+   height: 20%;
+   a{
+    color: @eventColor;
+   }
+}
+
+
+.clock {
+  background-color: @clockColor;
+}
+
+.eventbuttons {
+  background-color: @eventColor;
+}
+
+
+.passport {
+  background-color: @passportColor;
+}
+
+.happy {
+  .setFaColor(@happyColor);
+}
+
+.sad {
+  .setFaColor(@sadColor);
+}
+
+.pain {
+  .setFaColor(@painColor);
+}
+.menu {
+  overflow: hidden;
+  margin:1%;
+
+  .btn{
+      margin: 1%;
+      padding: 10px 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+    
+}
+.btn-transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#emotion_table {
+  .happy {
+    background-color: lighten(@happyColor, 30%);
+  }
+  .sad {
+    background-color: lighten(@sadColor, 60%);
+  }
+  .pain {
+    background-color: lighten(@painColor, 60%);
+  }
+
+}
+.hidden {
+  display: none;
+}
